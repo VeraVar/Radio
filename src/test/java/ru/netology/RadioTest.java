@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class RadioTest {
-    Radio radio = new Radio();
+    Radio radio = new Radio(0, 10, 0, 0, 100, 0);
 
     @Test
     public void setCurrentNumberRadioStationCheckMin() {
@@ -14,8 +14,8 @@ public class RadioTest {
 
     @Test
     public void setCurrentNumberRadioStationCheckMiddle() {
-        radio.setCurrentNumberRadioStation(4);
-        assertEquals(4, radio.getCurrentNumberRadioStation());
+        radio.setCurrentNumberRadioStation(5);
+        assertEquals(5, radio.getCurrentNumberRadioStation());
     }
 
     @Test

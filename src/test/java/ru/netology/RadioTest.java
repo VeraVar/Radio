@@ -20,8 +20,8 @@ public class RadioTest {
 
     @Test
     public void setCurrentNumberRadioStationCheckMax() {
-        radio.setCurrentNumberRadioStation(9);
-        assertEquals(9, radio.getCurrentNumberRadioStation());
+        radio.setCurrentNumberRadioStation(10);
+        assertEquals(10, radio.getCurrentNumberRadioStation());
     }
 
     @Test
@@ -32,8 +32,8 @@ public class RadioTest {
 
     @Test
     public void setCurrentNumberRadioStationCheckOverMax() {
-        radio.setCurrentNumberRadioStation(10);
-        assertEquals(9, radio.getCurrentNumberRadioStation());
+        radio.setCurrentNumberRadioStation(11);
+        assertEquals(10, radio.getCurrentNumberRadioStation());
     }
 
     @Test
@@ -45,65 +45,65 @@ public class RadioTest {
 
     @Test
     public void nextNumberRadioStationNormal() {
-        radio.setCurrentNumberRadioStation(4);
+        radio.setCurrentNumberRadioStation(5);
         radio.nextNumberRadioStation();
-        assertEquals(5, radio.getCurrentNumberRadioStation());
+        assertEquals(6, radio.getCurrentNumberRadioStation());
     }
 
     @Test
     public void nextNumberRadioStationSwitch() {
-        radio.setCurrentNumberRadioStation(9);
+        radio.setCurrentNumberRadioStation(10);
         radio.nextNumberRadioStation();
         assertEquals(0, radio.getCurrentNumberRadioStation());
     }
 
     @Test
     public void prevNumberRadioStationStart() {
-        radio.setCurrentNumberRadioStation(9);
+        radio.setCurrentNumberRadioStation(10);
         radio.prevNumberRadioStation();
-        assertEquals(8, radio.getCurrentNumberRadioStation());
+        assertEquals(9, radio.getCurrentNumberRadioStation());
     }
 
     @Test
     public void prevNumberRadioStationNormal() {
-        radio.setCurrentNumberRadioStation(4);
+        radio.setCurrentNumberRadioStation(5);
         radio.prevNumberRadioStation();
-        assertEquals(3, radio.getCurrentNumberRadioStation());
+        assertEquals(4, radio.getCurrentNumberRadioStation());
     }
 
     @Test
     public void prevNumberRadioStationSwitch() {
         radio.setCurrentNumberRadioStation(0);
         radio.prevNumberRadioStation();
-        assertEquals(9, radio.getCurrentNumberRadioStation());
+        assertEquals(10, radio.getCurrentNumberRadioStation());
     }
 
     @Test
     public void increaseCurrentVolumeNormal() {
-        radio.setCurrentVolume(5);
+        radio.setCurrentVolume(50);
         radio.increaseCurrentVolume();
-        assertEquals(6, radio.getCurrentVolume());
+        assertEquals(51, radio.getCurrentVolume());
     }
 
     @Test
     public void increaseCurrentVolumeLimit() {
-        radio.setCurrentVolume(10);
+        radio.setCurrentVolume(100);
         radio.increaseCurrentVolume();
-        assertEquals(10, radio.getCurrentVolume());
+        assertEquals(100, radio.getCurrentVolume());
     }
 
     @Test
     public void increaseCurrentVolumeOverMax() {
-        radio.setCurrentVolume(11);
+        radio.setCurrentVolume(101);
         radio.increaseCurrentVolume();
-        assertEquals(10, radio.getCurrentVolume());
+        assertEquals(100, radio.getCurrentVolume());
     }
 
     @Test
     public void decreaseCurrentVolumeNormal() {
-        radio.setCurrentVolume(5);
+        radio.setCurrentVolume(50);
         radio.decreaseCurrentVolume();
-        assertEquals(4, radio.getCurrentVolume());
+        assertEquals(49, radio.getCurrentVolume());
     }
 
     @Test
